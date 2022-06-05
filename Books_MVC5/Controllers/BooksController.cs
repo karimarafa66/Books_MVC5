@@ -81,7 +81,7 @@ namespace Books_MVC5.Controllers
                 model.Categories = _context.Categories.Where(m => m.IsActive).ToList();
                 return View("BookForm", model);
             }
-
+           
             if (model.Id == 0)
             {
                 var book = new Book

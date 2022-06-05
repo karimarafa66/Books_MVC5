@@ -22,11 +22,14 @@ namespace Books_MVC5.Models
         [MaxLength(2000)]
         public string Description { get; set; }
 
+        public string BookImage { get; set; }
+
         public byte CategoryId { get; set; }
 
         public Category Category { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime AddedOn { get; set; }
 
         public Book()

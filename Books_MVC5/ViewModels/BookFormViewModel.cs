@@ -23,6 +23,8 @@ namespace Books_MVC5.ViewModels
         [MaxLength(2000)]
         public string Description { get; set; }
 
+        public string BookImage { get; set; }
+
         [Display(Name = "Category")]
         public byte CategoryId { get; set; }
 
