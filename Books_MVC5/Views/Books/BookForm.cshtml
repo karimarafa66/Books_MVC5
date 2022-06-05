@@ -1,14 +1,10 @@
 ﻿@model Books_MVC5.ViewModels.BookFormViewModel
-@{
-    ViewBag.Title = "Create";
-}
 
-<h2>Create</h2>
+@{ ViewBag.Title = "Create"; }
 
-
-@*<h3 class="text-success">
-        @(Model.Id == 0 ? "Add New Book" : "Edit Book")
-    </h3>*@
+<h3 class="text-primary">
+    @(Model.Id == 0 ? "Add New Book" : "Edit Book")
+</h3>
 
 <hr />
 
