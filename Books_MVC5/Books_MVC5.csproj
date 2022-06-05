@@ -146,6 +146,10 @@
     <Compile Include="Migrations\202206050604021_addCategories.designer.cs">
       <DependentUpon>202206050604021_addCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206050847597_AddAttributeToBookModel.cs" />
+    <Compile Include="Migrations\202206050847597_AddAttributeToBookModel.designer.cs">
+      <DependentUpon>202206050847597_AddAttributeToBookModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
@@ -261,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206050604021_addCategories.resx">
       <DependentUpon>202206050604021_addCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206050847597_AddAttributeToBookModel.resx">
+      <DependentUpon>202206050847597_AddAttributeToBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

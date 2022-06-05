@@ -26,6 +26,7 @@ namespace Books_MVC5.Models
 
         public Category Category { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime AddedOn { get; set; }
 
         public Book()
