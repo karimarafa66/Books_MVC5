@@ -24,6 +24,8 @@ namespace Books_MVC5
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/icofont.min.css",
+
                       "~/Content/site.css"));
         }
     }
