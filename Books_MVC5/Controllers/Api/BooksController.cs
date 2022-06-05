@@ -1,16 +1,10 @@
 ﻿using Books_MVC5.DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
-namespace Books_MVC5.Controllers.Api
+namespace Books.Controllers.Api
 {
     public class BooksController : ApiController
     {
-
         private readonly BookContext _context;
 
         public BooksController()

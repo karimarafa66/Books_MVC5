@@ -18,7 +18,7 @@
     No books added yet!
 </div>
 
-<table class="table @(!Model.Any() ? "d-none" : "")">
+<table class="table table-bordered bg-opacity-50 table-secondary table-striped @(!Model.Any() ? "d-none" : "")">
     <thead>
         <tr>
             <th>Title</th>
@@ -33,7 +33,7 @@
         @foreach (var book in Model)
         {
 <tr>
-    <td>@Html.ActionLink(book.Title, "Details", "Books", new { id = book.Id }, null)</td>
+    <td>@Html.ActionLink(book.Title, "Details", "Books", new { id = book.Id }, new { @class = "btn btn-outline-success" })</td>
     <td>@book.Author</td>
     <td>@book.Category.Name</td>
     <td>@book.Description</td>
@@ -48,13 +48,14 @@
             Delete
         </a>
     </td>
-</tr>}
+</tr>
+}
     </tbody>
 </table>
 
 @section Scripts
 {
-    <script>
+    @*<script>
         $(document).ready(function () {
 
             toastr.options = {
@@ -84,7 +85,7 @@
                     callback: function (result) {
                         if (result) {
                             $.ajax({
-                                url: '/api/books/' + btn.data('id'),
+                                url: '/Api/Books/' + btn.data('id'),
                                 method: 'DELETE',
                                 success: function () {
 
@@ -109,5 +110,42 @@
                     }
                 });
             });
-        });</script>
+        });</script>*@
+
+    <script>
+        $(document).ready(function () {
+            var message = $('#Message').text();
+            if (message !== '') {
+                toastr.success(message);
+            }
+
+            $('.js-delete').on('click', function () {
+                var btn = $(this);
+                var result = confirm("Are You Sure, You Need To Delete This Book?");
+                if (result) {
+                    $.ajax({
+                        url: 'Api/Books/' + btn.data('id'),
+                        method: 'DELETE',
+                        succsess: function () {
+                            btn.parents('tr').fadeOut(function () {
+                                this.remove();
+                            });
+                            toastr.success("Book Deleted")
+                        },
+                        error: function () {
+                            toastr.error("Something Went Wrong");
+                        }
+                    });
+                }
+            });
+
+        });
+
+
+    </script>
+
+
+
+
+
 }

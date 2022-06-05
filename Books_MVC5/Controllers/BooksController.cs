@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Books_MVC5.Models;
 using Books_MVC5.ViewModels;
 using System.Net;
+using System.Data.Entity;
 
 namespace Books_MVC5.Controllers
 {
@@ -30,7 +31,7 @@ namespace Books_MVC5.Controllers
             if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            var book = _context.Books.SingleOrDefault(m => m.Id == id);
+            var book = _context.Books.Include(m => m.Category).SingleOrDefault(m => m.Id == id);
 
             if (book == null)
                 return HttpNotFound();
