@@ -22,7 +22,7 @@ namespace Books_MVC5.Models
         [MaxLength(2000)]
         public string Description { get; set; }
 
-        public string BookImage { get; set; }
+      
 
         public byte CategoryId { get; set; }
 
